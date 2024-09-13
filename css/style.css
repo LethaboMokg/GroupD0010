@@ -1,0 +1,304 @@
+/* Box sizing and general reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body background and font settings */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Centered container for forms */
+.signup-container, .signin-container {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 80px; 
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+
+/* Adjust logo size for better fit */
+.logo-image {
+    width: 80px; 
+    height: auto; 
+}
+
+/* Form container */
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #666;
+}
+
+/* Input fields styling */
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+input[type=text]:focus, input[type=password]:focus, select:focus {
+    background-color: #eaeaea;
+    outline: none;
+    border-color: #04AA6D;
+}
+
+/* Mobile number input with country flag */
+.mobile-input {
+    display: flex;
+}
+
+select {
+    width: 30%;
+    margin-right: 10px;
+}
+
+/* Button styles */
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Specific button styles */
+.cancel-button {
+    background-color: #e00a06;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.cancel-button, .signup-button, .signin-button {
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+}
+
+.cancel-button:last-child {
+    margin-right: 0;
+}
+
+/* Responsive form styles for smaller screens */
+@media screen and (max-width: 500px) {
+    .cancel-button, .signup-button, .signin-button {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .mobile-input {
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Resize logo on small screens */
+    .logo-image {
+        width: 40px; 
+    }
+}
+
+/* Header and navigation bar styles */
+header {
+    background-color: #71ccb5e3;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 80px;
+    height: auto; 
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #0c2c50;
+    border-radius: 5px;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0c2c50;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(120, 213, 216, 0.452);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #3d8f7a;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Main content styling */
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+
+h1 {
+    color: #333333;
+}
+
+/* Form container */
+.contact-form {
+    width: 100%;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: #eaeaea;
+    outline: none;
+    border-color: #04AA6D;
+}
+
+.contact-form button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+    border-radius: 5px;
+    margin-right: 4%;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+.cancel-button {
+    background-color: #e00a06;
+}
+
+.contact-form .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* Footer styling */
+footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content p {
+    margin: 0;
+    color: #333;
+}
+

@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all.2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top:6rem ;
+    
+}
+body{
+    background-image: url(DALL·E\ 2024-09-23\ 15.15.10\ -\ A\ beautiful\ medical-themed\ background\ image\ with\ soft\ blue\ and\ white\ hues.\ The\ design\ should\ feature\ subtle\ medical\ icons\ like\ stethoscopes\,\ heartbeat.webp);
+}
+header{
+    background-color: aquamarine;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 1rem 7%;
+    justify-content: space-between;
+    width: 100%;
+}
+.navbar a{
+    color: black;
+    font-size: 1.7rem;
+    margin: 1rem;
+    transition: 0.5s;
+    position: relative;
+
+}
+.navbar a:hover{
+    color: rgb(230, 158, 14);
+}
+.navbar a::after{
+    content: "";
+    background-color: rgb(236, 86, 17);
+    width: 0;
+    position: absolute;
+    height: 0.2rem;
+    left: 0;
+    margin-top: 0.5rem;
+    top: 100%;
+    transition: 0.5s;
+}
+.navbar a:hover::after{
+    width: 100%;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.srch {
+    width: 250px; 
+    padding: 8px 10px; 
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+
+.srch:focus {
+    border-color: #d1860d;
+}
+
+.Btn {
+    padding: 8px 15px;
+    background-color: #f3620e; 
+    color: white; 
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; 
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+
+.Btn:hover {
+    background-color: #00b39b; 
+}
+
+
+.Btn:active {
+    background-color: #374554;
+}
+
+
+@media (max-width: 1500px) {
+    .srch {
+        width: 180px;
+    }
+    
+    .Btn {
+        padding: 7px 12px;
+    }
+}

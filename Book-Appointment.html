@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Logo" class="logo-image" onclick="window.location.href='index.html'">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="book-appointment.html">Book an Appointment</a>
+                        <a href="doctor.html">Doctor</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+                 <!-- Search Bar Section -->
+        <div class="search-container">
+            <form action="search.html" method="GET" class="search-form">
+                <input type="text" placeholder="     Search..." class="search-input" name="query">
+                <span class="search-icon">&#128269;</span> 
+            </form>
+        </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="appointment-form">
+            <h1>Book an Appointment</h1>
+            <form action="#" method="post">
+                <div class="form-row">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="First" required>
+                </div>
+                <div class="form-row">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Last" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="mobile">Mobile Number:</label>
+                    <div class="input-group">
+                        <select id="mobile-country" name="mobile-country" required>
+                            <option value="south-africa">🇿🇦 +27 South Africa</option>
+                            <option value="nigeria">🇳🇬 +234 Nigeria</option>
+                        </select>
+                        <input type="tel" id="mobile" name="mobile" placeholder="e.g., 812345678" pattern="^\d{10,14}$" required title="Please enter a valid phone number between 10 to 14 digits">
+                    </div>
+                </div>         
+                <div class="form-row">
+                    <label for="condition">Patient's Condition:</label>
+                    <textarea id="condition" name="condition" placeholder="Describe your condition..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="appointment-date">Preferred Date:</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                </div>
+                <div class="form-row">
+                    <label for="appointment-time">Preferred Time:</label>
+                    <input type="time" id="appointment-time" name="appointment-time" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="submit-button">Submit Appointment</button> 
+                    <!-- <button type="button" class="cancel-button" onclick="window.location.href='Signup.html'">Cancel</button> -->
+                </div>
+            </form>
+        </section>
+        <br>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>

@@ -3,24 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Navigation bar</title>
+    <title>Health Services - Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
-<div class="header">
-    <img src="health_resized_90px.jpg" alt="log">
-    <nav class="navbar">
-        <a href="Home">Home</a>
-        <a href="About">About</a>
-        <a href="Services">Services</a>
-        <a href="Gallery">Gallery</a>
-        <a href="Contact"> Contact</a>
-    </nav>
-    <input type="search" name="" placeholder="Type to text">
-    <button class="Btn">Search</button>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Logo" class="logo-image" onclick="window.location.href='SignIn.html'">
+            </div>
+            <br>
+            <br>
+            <br>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="book-appointment.html">Book an Appointment</a>
+                        <a href="doctor.html">Doctor</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        <!-- Search Bar Section -->
+        <div class="search-container">
+            <form action="search.html" method="GET" class="search-form">
+                <input type="text" placeholder="     Search..." class="search-input" name="query">
+                <span class="search-icon">&#128269;</span> 
+            </form>
+        </div>
+                
+        </nav>
+    </header>
+    <br>
+    <br>
+    <main>
+        <!-- Featured Section on Home Page -->
+    <section class="featured-services">
+        <div class="featured-content-wrapper">
+            <div class="featured-text">
+                <h2>Why Choose GroupD Med?</h2>
+                <p>GroupD Med offers an innovative and convenient way to book medical appointments with top medical practitioners from the comfort of your home or workplace.</p>
 
-</div>
-    
+                <h3>✔ Wide Network of Professionals</h3>
+                <p>Access a pool of experienced and specialized doctors across South Africa and Nigeria, ready to cater to your unique healthcare needs.</p>
+
+                <h3>✔ Hassle-Free Appointments</h3>
+                <p>No more waiting in long queues or dealing with busy call lines. Schedule appointments easily and efficiently with just a few clicks.</p>
+
+                <h3>✔ Multiple Payment Options</h3>
+                <p>Our platform offers various payment options, including medical aid, to ensure you have a seamless and flexible experience.</p>
+
+                <h3>✔ Trusted and Reliable Service</h3>
+                <p>We prioritize your health and time, connecting you with the most trusted practitioners for quality healthcare services whenever you need them.</p>
+            </div>
+            <div class="featured-image">
+                <img src="images/medication.jpg" alt="Health Services Overview" class="featured-home-image">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Health Services. All rights reserved.</p>
+        </div>
+    </footer>
+</main>
 </body>
 </html>

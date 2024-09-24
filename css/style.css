@@ -8,7 +8,7 @@
 /* Body background and font settings */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../images/background.jpg');
+    background-image: url('../images/back1.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -16,18 +16,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
 }
 
 /* Centered container for forms */
-.signup-container, .signin-container {
+.signup-container, .signin-container, .appointment-form {
     background-color: #fff; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    margin-top: 80px; 
+    max-width: 700px;
+    width: 90%; /* Adjusted for better responsiveness */
 }
 
 /* Logo styling */
@@ -37,10 +35,10 @@ body {
     margin-bottom: 10px;
 }
 
-/* Adjust logo size for better fit */
 .logo-image {
     width: 80px; 
     height: auto; 
+    cursor: pointer; 
 }
 
 /* Form container */
@@ -59,20 +57,13 @@ p {
 }
 
 /* Input fields styling */
-input[type=text], input[type=password], select {
+input[type=text], input[type=password], select, input[type=date], input[type=time], textarea {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
-    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
     background: #f9f9f9;
-}
-
-input[type=text]:focus, input[type=password]:focus, select:focus {
-    background-color: #eaeaea;
-    outline: none;
-    border-color: #04AA6D;
 }
 
 /* Mobile number input with country flag */
@@ -80,7 +71,7 @@ input[type=text]:focus, input[type=password]:focus, select:focus {
     display: flex;
 }
 
-select {
+.mobile-input select {
     width: 30%;
     margin-right: 10px;
 }
@@ -90,7 +81,6 @@ button {
     background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -99,27 +89,6 @@ button {
 
 button:hover {
     opacity: 0.9;
-}
-
-/* Specific button styles */
-.cancel-button {
-    background-color: #e00a06;
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.cancel-button, .signup-button, .signin-button {
-    width: 48%;
-    float: left;
-    margin-right: 4%;
-}
-
-.cancel-button:last-child {
-    margin-right: 0;
 }
 
 /* Responsive form styles for smaller screens */
@@ -133,7 +102,7 @@ button:hover {
         flex-direction: column;
     }
 
-    select {
+    .mobile-input select {
         width: 100%;
         margin-bottom: 10px;
     }
@@ -147,7 +116,7 @@ button:hover {
 /* Header and navigation bar styles */
 header {
     background-color: #71ccb5e3;
-    padding: 10px 0;
+    padding: 10px 2px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -162,16 +131,6 @@ header {
     padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-image {
-    width: 80px;
-    height: auto; 
 }
 
 .nav-links {
@@ -227,78 +186,396 @@ header {
     display: block;
 }
 
+/* Search Container Styling */
+.search-container {
+    margin-left: auto; /* Align search bar to the right */
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 30px 8px 35px; /* Add padding to make room for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px; /* Adjust position to place icon inside input */
+    font-size: 16px;
+    color: #888; /* Change color as needed */
+    pointer-events: none; /* Ensure the icon doesn't block input clicks */
+}
 
 /* Main content styling */
 main {
-    text-align: center;
+    padding-top: 60px; 
+}
+
+/* Doctor Schedules Section */
+.doctor-schedule {
     padding: 20px;
+    text-align: center;
 }
 
-
-h1 {
-    color: #333333;
+.schedule-table {
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
-/* Form container */
-.contact-form {
+table {
     width: 100%;
+    border-collapse: collapse;
 }
 
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Appointment Form Section */
+.appointment-form {
+    padding: 20px; /* Reduced padding */
+    margin-top: 110px;
+    margin-bottom: 20px;
+}
+
+/* Form row styling */
+.form-row {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    margin-bottom: 10px; /* Reduced bottom margin */
+}
+
+.form-row label {
+    flex-basis: 30%; /* Adjust to give labels more width */
+    margin-right: 10px; /* Space between label and input */
     font-weight: bold;
 }
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 10px;
+.form-row input, .form-row select, .form-row textarea {
+    flex-basis: 65%; /* Adjust as needed for inputs */
+    padding: 10px; /* Reduced padding */
     border: 1px solid #ccc;
     border-radius: 5px;
     background: #f9f9f9;
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
-    background-color: #eaeaea;
-    outline: none;
-    border-color: #04AA6D;
+.input-group {
+    display: flex;
+    align-items: center; /* Align items in the input group */
 }
 
-.contact-form button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    border: none;
-    cursor: pointer;
-    width: 48%;
-    border-radius: 5px;
-    margin-right: 4%;
+.input-group select {
+    width: 30%; /* Adjusted for mobile dropdown */
+    margin-right: 10px; /* Space between country dropdown and phone input */
 }
 
-.contact-form button:hover {
-    opacity: 0.9;
+textarea {
+    height: 100px; /* Set height for the condition textarea */
 }
 
-.cancel-button {
-    background-color: #e00a06;
+/* Doctor Photos Section */
+.doctor-photos {
+    padding: 30px;
 }
 
-.contact-form .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.doctor-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-/* Footer styling */
-footer {
-    background-color: #f4f4f4;
-    padding: 20px 0;
+
+.doctor-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-top: 1px solid #ddd;
+    margin: 5px;
+    padding: 10px;
+    max-width: 300px;
 }
 
-.footer-content p {
-    margin: 0;
+.doctor-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.doctor-card h3 {
+    margin: 10px 0;
     color: #333;
 }
 
+.doctor-card p {
+    color: #777;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Featured Section */
+.featured-services {
+    padding: 10px 30px;
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #eaeaea; 
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 5px;
+    margin-top: 45px;
+}
+
+.featured-content-wrapper {
+    display: flex;
+    max-width: 1300px;
+    gap: 40px; 
+    align-items: center;
+}
+
+.featured-text {
+    flex: 1;
+}
+
+.featured-text h2 {
+    color: #007bff; 
+    margin-bottom: 20px;
+}
+
+.featured-text h3 {
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.featured-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.featured-image {
+    flex: 1;
+}
+
+.featured-home-image {
+    width: 90%; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .featured-content-wrapper {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .featured-text, .featured-image {
+        width: 100%;
+    }
+}
+
+/* About Us Section */
+.about-us {
+    padding: 10px 30px;
+    background-color: #f9f9f9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.about-content-wrapper {
+    display: flex;
+    max-width: 1300px;
+    gap: 30px; 
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #007bff; 
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #333;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-us-image {
+    width: 90%; 
+    height: auto;
+    border-radius: 1px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .about-content-wrapper {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .about-text, .about-image {
+        width: 100%; /* Adjust to full width for better responsiveness */
+    }
+}
+
+/* Updated CSS for services section */
+.services {
+    padding: 10px 50px; /* Adjust padding for better layout */
+    background-color: #f9f9f9;
+    display: flex; /* Use flex to handle the layout */
+    justify-content: center; /* Center the content */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 55px;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+
+.center-content {
+    text-align: center; /* Center align text */
+    margin: 0 auto; /* Center the div */
+    width: 80%; /* Adjust width as necessary */
+}
+
+.service-item {
+    margin-top: 50px;
+    margin-bottom: 20px; /* Add space between service items */
+}
+
+.left-images,
+.right-images {
+    display: flex;
+    flex-direction: column; /* Align images vertically */
+    justify-content: space-between; /* Space out images */
+}
+
+.center-content {
+    padding: 0 20px; /* Add padding between the center content and side images */
+    max-width: 600px; /* Limit width for the center content */
+    text-align: center; /* Center the text */
+}
+
+.side-image {
+    margin: 10px 0; /* Add space between images */
+    width: 200px; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 1200px) {
+    .services {
+        flex-direction: column; /* Make the layout vertical on smaller screens */
+        align-items: center;
+    }
+
+    .left-images, .right-images {
+        flex-direction: row;
+        margin: 10px 0;
+    }
+
+    .center-content {
+        padding: 20px 10px; /* Reduce padding for smaller screens */
+    }
+
+    .side-image {
+        width: 100px; /* Adjust image width for smaller screens */
+    }
+}
+
+/* Container for the contact section */
+.contact-content-wrapper {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    padding: 0; /* Remove padding around the container */
+    max-width: 1200px; /* Set max width */
+    margin: 0 auto; /* Center the container */
+    background-color: #f9f9f9; /* Background color for the entire section */
+    border-radius: 8px; /* Rounded corners for the whole section */
+}
+
+/* Card for the contact form */
+.contact-card {
+    width: 100%; /* Width for the contact form card */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    background-color: #fff; /* White background */
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left */
+}
+
+/* Card for the contact image */
+.image-card {
+    width: 100%; /* Width for the image card */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Vertically center the image */
+    padding: 20px;
+    background-color: #fff; /* White background for the image card */
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right */
+}
+
+/* Styling for the contact image */
+.contact-us-image {
+    max-width: 100%; /* Ensure the image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .contact-content-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .contact-card,
+    .image-card {
+        width: 100%; /* Full width on smaller screens */
+        padding: 20px; /* Consistent padding */
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #f4f4f4;
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 5px;
+    color: #333;
+}

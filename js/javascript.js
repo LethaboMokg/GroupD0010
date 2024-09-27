@@ -48,7 +48,7 @@ function validateSignUp(event) {
 
     // If all validations pass, show success message and redirect to Sign In page
     alert("Sign up successful! Redirecting to Sign In page...");
-    window.location.href = 'Signin.html'; // Redirect to the Sign In page
+    window.location.href = 'signin.html'; // Redirect to the Sign In page
 }
 
 // Function to validate the signin form
@@ -73,7 +73,7 @@ function validateSignIn(event) {
 
     // If all validations pass, show success message and redirect to index.html
     alert("Sign in successful! Redirecting to the home page...");
-    window.location.href = 'index.html'; // Redirect to index.html after successful sign-in
+    window.location.href = '../index.html'; // Redirect to index.html after successful sign-in
 }
 
 // Function to validate the appointment form
@@ -168,5 +168,5 @@ function validateContactForm(event) {
 
     // If all validations pass, show success message and redirect to index.html
     alert("Thank you for your message! We will get back to you shortly.");
-    window.location.href = 'index.html'; // Redirect to index.html after successful submission
+    window.location.href = '../index.html'; // Redirect to index.html after successful submission
 }

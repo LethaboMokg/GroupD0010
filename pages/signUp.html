@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/javascript.js"></script>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">
+            <!-- Logo section -->
+            <img src="../images/logo.jpg" alt="Logo" class="logo-image">
+        </div>
+        <form class="signup-form" onsubmit="validateSignUp(event)">
+            <div class="container">
+                <h1>Sign Up <span class="green-text">ProSLOP</span> Med</h1>
+                <br>
+                <p>Please complete the form below to create an account</p>
+                <br>
+
+                <label for="fullname">Full Name</label>
+                <input type="text" placeholder="Enter Full Name" name="fullname" required>
+
+                <label for="lastname">Last Name</label>
+                <input type="text" placeholder="Enter Last Name" name="lastname" required>
+
+                <label for="mobile">Mobile Number</label>
+                <div class="mobile-input">
+                    <select name="country-code" id="country-code">
+                        <option value="+27" data-flag="za">🇿🇦 South Africa (+27)</option>
+                        <option value="+234" data-flag="ng">🇳🇬 Nigeria (+234)</option>
+                    </select>
+                    <input type="text" placeholder="Enter Mobile Number" name="mobile" required>
+                </div>
+
+                <label for="email">Email</label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="passw">Password</label>
+                <input type="password" placeholder="Enter Password" name="passw" required>
+
+                <label for="confirm-passw">Confirm Password</label>
+                <input type="password" placeholder="Confirm Password" name="confirm-passw" required>
+
+                <label>
+                    <input type="checkbox" name="remember" style="margin-bottom: 15px;">
+                    Keep me signed in
+                </label>
+                <br>
+                <p>By creating an account you agree to our <a href="https://www.health.gov.za/wp-content/uploads/2020/11/General-Conditions-Of-Contract.pdf" style="color: dodgerblue;">Terms and Conditions</a>.</p>
+
+                <div class="clearfix">
+                    <button type="submit" class="signup-button"">Sign Up</button>
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

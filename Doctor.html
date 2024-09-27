@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Doctors</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Make sure the path to your CSS file is correct -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
     <!-- Header Section -->
@@ -25,50 +25,52 @@
                 </li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
-                 <!-- Search Bar Section -->
-        <div class="search-container">
-            <form action="search.html" method="GET" class="search-form">
-                <input type="text" placeholder="     Search..." class="search-input" name="query">
-                <span class="search-icon">&#128269;</span> 
-            </form>
-        </div>
+            <!-- Search Bar Section -->
+            <div class="search-container">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" placeholder="     Search..." class="search-input" name="query">
+                    <span class="search-icon">&#128269;</span> 
+                </form>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- Doctors' Photos Section -->
+        <section class="doctor-photos">
+            <div class="centered-container">
+                <h2 class="centered">Meet Our Doctors</h2>
+            </div>
+            <div class="doctor-gallery">
+                <div class="doctor-card">
+                    <img src="images/book3.gif" alt="Dr. Genesis Mark">
+                    <h3>Dr. Genesis Mark</h3>
+                    <p>General Practitioner</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="images/book2.gif" alt="Dr. Matthew Luke">
+                    <h3>Dr. Matthew Luke</h3>
+                    <p>Pediatrician</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="images/med.gif" alt="Dr. Luke Hebrews">
+                    <h3>Dr. Luke Hebrews</h3>
+                    <p>Cardiologist</p>
+                </div>
+                <div class="doctor-card">
+                    <img src="images/rad.jpg" alt="Dr. Hannah Revelation">
+                    <h3>Dr. Hannah Revelation</h3>
+                    <p>Radiologist</p>
+                </div>
+            </div>
+        </section>
 
-             <!-- Doctors' Photos Section -->
-             <section class="doctor-photos">
-                <div class="centered-container">
-                    <h2 class="centered">Meet Our Doctors</h2>
-                </div>
-                <div class="doctor-gallery">
-                    <div class="doctor-card">
-                        <img src="images/book3.gif" alt="Dr. Genesis Mark">
-                        <h3>Dr. Genesis Mark</h3>
-                        <p>General Practitioner</p>
-                    </div>
-                    <div class="doctor-card">
-                        <img src="images/book2.gif" alt="Dr. Matthew Luke">
-                        <h3>Dr. Matthew Luke</h3>
-                        <p>Pediatrician</p>
-                    </div>
-                    <div class="doctor-card">
-                        <img src="images/med.gif" alt="Dr. Luke Hebrews">
-                        <h3>Dr. Luke Hebrews</h3>
-                        <p>Cardiologist</p>
-                    </div>
-                    <div class="doctor-card">
-                        <img src="images/rad.jpg" alt="Dr. Hannah Revelation">
-                        <h3>Dr. Hannah Revelation</h3>
-                        <p>Radiologist</p>
-                    </div>
-                </div>
-            </section>
-            <br>
+        <br>
         <!-- Doctor Schedules Section -->
         <section class="doctor-schedule">
-            <h2>Our Doctors' Schedule</h2>
+            <div class="centered-container">
+                <h2 class="centered">Our Doctors' Schedule</h2>
+            </div>
             <br>
             <div class="schedule-table">
                 <table>
@@ -98,22 +100,21 @@
                     </tr>
                     <tr>
                         <td>Dr. Hannah Revelation</td>
-                        <td>Radioligist</td>
+                        <td>Radiologist</td>
                         <td>Saturday</td>
-                        <td>12 AM - 8pm PM</td>
+                        <td>12 PM - 8 PM</td>
                     </tr>
                 </table>
             </div>
         </section>
 
-    <br>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
-        </div>
-    </footer>
-</main>
+        <br>
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 <strong><span class="green-text">ProSLOP</span> Med</strong> . All Rights Reserved.</p>
+            </div>
+        </footer>
+    </main>
 </body>
 </html>

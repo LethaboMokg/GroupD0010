@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Appointment</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/javascript.js"></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -25,68 +26,100 @@
                 </li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
-                 <!-- Search Bar Section -->
-        <div class="search-container">
-            <form action="search.html" method="GET" class="search-form">
-                <input type="text" placeholder="     Search..." class="search-input" name="query">
-                <span class="search-icon">&#128269;</span> 
-            </form>
-        </div>
+            <div class="search-container">
+                <form action="search.html" method="GET" class="search-form">
+                    <input type="text" placeholder="      Search..." class="search-input" name="query">
+                    <span class="search-icon">&#128269;</span> 
+                </form>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="appointment-form">
-            <h1>Book an Appointment</h1>
-            <form action="#" method="post">
-                <div class="form-row">
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="First" required>
-                </div>
-                <div class="form-row">
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" placeholder="Last" required>
-                </div>
-
-                <div class="form-row">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-row">
-                    <label for="mobile">Mobile Number:</label>
-                    <div class="input-group">
-                        <select id="mobile-country" name="mobile-country" required>
-                            <option value="south-africa">🇿🇦 +27 South Africa</option>
-                            <option value="nigeria">🇳🇬 +234 Nigeria</option>
-                        </select>
-                        <input type="tel" id="mobile" name="mobile" placeholder="e.g., 812345678" pattern="^\d{10,14}$" required title="Please enter a valid phone number between 10 to 14 digits">
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+                <h1>Book an Appointment</h1>
+                <br>
+                <p>Please complete the form below:</p>
+                <br>
+                <form action="#" method="post" onsubmit="validateAppointment(event)">
+                    <div class="formbold-mb-5">
+                        <label for="first-name" class="formbold-form-label">First Name</label>
+                        <input type="text" name="first-name" id="first-name" placeholder="First Name" class="formbold-form-input" required />
                     </div>
-                </div>         
-                <div class="form-row">
-                    <label for="condition">Patient's Condition:</label>
-                    <textarea id="condition" name="condition" placeholder="Describe your condition..." required></textarea>
-                </div>
-
-                <div class="form-row">
-                    <label for="appointment-date">Preferred Date:</label>
-                    <input type="date" id="appointment-date" name="appointment-date" required>
-                </div>
-                <div class="form-row">
-                    <label for="appointment-time">Preferred Time:</label>
-                    <input type="time" id="appointment-time" name="appointment-time" required>
-                </div>
-
-                <div class="button-group">
-                    <button type="submit" class="submit-button">Submit Appointment</button> 
-                    <!-- <button type="button" class="cancel-button" onclick="window.location.href='Signup.html'">Cancel</button> -->
-                </div>
-            </form>
-        </section>
-        <br>
+                    <div class="formbold-mb-5">
+                        <label for="last-name" class="formbold-form-label">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Last Name" class="formbold-form-input" required />
+                    </div>
+                    <div class="formbold-mb-5">
+                        <label for="gender" class="formbold-form-label">Gender</label>
+                        <select name="gender" id="gender" class="formbold-form-input" required>
+                            <option value="" disabled selected>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="formbold-mb-5">
+                        <label for="mobile" class="formbold-form-label">Mobile Number</label>
+                        <div class="mobile-input">
+                            <select id="mobile-country" name="mobile-country" required class="formbold-form-input">
+                                <option value="south-africa">🇿🇦 +27 South Africa</option>
+                                <option value="nigeria">🇳🇬 +234 Nigeria</option>
+                            </select>
+                            <input type="tel" id="mobile" name="mobile" placeholder="e.g., 812345678" pattern="^\d{10,14}$" required title="Please enter a valid phone number between 10 to 14 digits" class="formbold-form-input" />
+                        </div>
+                    </div>
+                    <div class="formbold-mb-5">
+                        <label for="email" class="formbold-form-label">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" class="formbold-form-input" required />
+                    </div>
+                    <div class="flex flex-wrap formbold--mx-3">
+                        <div class="w-full sm:w-half formbold-px-3">
+                            <div class="formbold-mb-5">
+                                <label for="dob" class="formbold-form-label">Date of Birth</label>
+                                <input type="date" name="dob" id="dob" class="formbold-form-input" required />
+                            </div>
+                        </div>
+                        <div class="w-full sm:w-half formbold-px-3">
+                            <div class="formbold-mb-5">
+                                <label for="appointment-date" class="formbold-form-label">Preferred Date</label>
+                                <input type="date" name="appointment-date" id="appointment-date" class="formbold-form-input" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap formbold--mx-3">
+                        <div class="w-full sm:w-half formbold-px-3">
+                            <div class="formbold-mb-5">
+                                <label for="address" class="formbold-form-label">Address</label>
+                                <input type="text" name="address" id="address" placeholder="Enter your address" class="formbold-form-input" required />
+                            </div>
+                        </div>
+                        <div class="w-full sm:w-half formbold-px-3">
+                            <div class="formbold-mb-5">
+                                <label for="appointment-time" class="formbold-form-label">Preferred Time</label>
+                                <input type="time" name="appointment-time" id="appointment-time" class="formbold-form-input" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formbold-mb-5 formbold-pt-3">
+                        <label class="formbold-form-label formbold-form-label-2">Patient's Condition</label>
+                        <textarea id="condition" name="condition" placeholder="Describe your condition..." required class="formbold-form-input"></textarea>
+                    </div>
+                    <div class="formbold-mb-5">
+                        <label for="service" class="formbold-form-label">Medical Service</label>
+                        <input type="text" id="service" name="service" placeholder="Specify the medical service" required class="formbold-form-input" />
+                    </div>
+                    <div>
+                        <button class="formbold-btn">Submit Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     <!-- Footer Section -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+            <p>&copy; 2024 <strong><span class="green-text">ProSLOP</span> Med</strong> . All Rights Reserved.</p>
         </div>
     </footer>
 </main>

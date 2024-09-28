@@ -25,14 +25,13 @@
                 </li>
                 <li><a href="contact.html">Contact Us</a></li> 
             </ul>
-            
             <!-- Search Bar Section -->
             <div class="search-container">
-                <form action="search.html" method="GET" class="search-form">
-                    <input type="text" placeholder="     Search..." class="search-input" name="query">
+                <form onsubmit="performSearch(event)" class="search-form">
+                    <input type="text" placeholder="Search..." class="search-input" id="search-input" name="query">
                     <span class="search-icon">&#128269;</span> 
                 </form>
-            </div>
+            </div>    
         </nav>
     </header>
 

@@ -76,6 +76,70 @@ function validateSignIn(event) {
     window.location.href = '../index.html'; // Redirect to index.html after successful sign-in
 }
 
+//search
+// Function to handle the search action
+function performSearch(event) {
+    event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+    // Get the search term from the input field
+    const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+
+    // Remove any existing highlights
+    removeHighlights();
+
+    if (!searchQuery) {
+        alert("Please enter a search term.");
+        return;
+    }
+
+    // Find all elements containing text on the page except for elements within the nav bar
+    const textElements = document.querySelectorAll('h1, h2, h3, p, div, span, li');
+
+    let found = false;
+
+    // Loop through the text elements and search for the term
+    textElements.forEach(element => {
+        // Ignore elements that are within the navbar
+        if (element.closest('.navbar') || element.closest('.nav-links')) return;
+
+        if (element.textContent.toLowerCase().includes(searchQuery)) {
+            highlightText(element, searchQuery);
+
+            if (!found) {
+                // Scroll to the first occurrence
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                found = true;
+            }
+        }
+    });
+
+    if (!found) {
+        alert("No results found for: " + searchQuery);
+    }
+}
+
+// Function to highlight the searched term
+function highlightText(element, searchQuery) {
+    const innerHTML = element.innerHTML;
+    const lowerCaseInnerHTML = innerHTML.toLowerCase();
+    const index = lowerCaseInnerHTML.indexOf(searchQuery);
+
+    if (index >= 0) {
+        // Safely replace the matching text with a highlighted version
+        const highlightedText = `<span class="highlight">${innerHTML.substring(index, index + searchQuery.length)}</span>`;
+        element.innerHTML = innerHTML.substring(0, index) + highlightedText + innerHTML.substring(index + searchQuery.length);
+    }
+}
+
+// Function to remove existing highlights
+function removeHighlights() {
+    const highlightedElements = document.querySelectorAll('.highlight');
+    highlightedElements.forEach(element => {
+        element.outerHTML = element.innerText; // Replace the highlighted element with its plain text
+    });
+}
+
+
 // Function to validate the appointment form
 function validateAppointment(event) {
     event.preventDefault(); // Prevent the form from submitting
